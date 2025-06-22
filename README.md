@@ -9,19 +9,19 @@
 -- codekata
 {
   _id: ObjectId,
-  userId: ObjectId, // Reference to users
+  userId: ObjectId, 
   problemId: String,
   problemName: String,
   solvedAt: Date,
-  status: String // e.g., "solved", "attempted"
+  status: String 
 }
 
 -- attendance
 {
   _id: ObjectId,
-  userId: ObjectId, // Reference to users
+  userId: ObjectId, 
   date: Date,
-  status: String // e.g., "present", "absent"
+  status: String /
 }
 -- topics
 
@@ -34,19 +34,19 @@
 -- tasks
 {
   _id: ObjectId,
-  userId: ObjectId, // Reference to users
-  topicId: ObjectId, // Reference to topics
+  userId: ObjectId, 
+  topicId: ObjectId, 
   taskName: String,
   assignedDate: Date,
   submittedDate: Date,
-  status: String // e.g., "submitted", "not_submitted"
+  status: String 
 }
 -- company_drives
 {
   _id: ObjectId,
   companyName: String,
   driveDate: Date,
-  participants: [ObjectId] // Array of userIds who attended
+  participants: [ObjectId] 
 }
 
 -- mentors
@@ -54,10 +54,10 @@
   _id: ObjectId,
   name: String,
   email: String,
-  mentees: [ObjectId] // Array of userIds
+  mentees: [ObjectId] 
 }
 -- Find all the topics and tasks taught in the month of October (any year)
-// Topics taught in October
+
 db.topics.find({
   taughtDate: {
     $gte: ISODate("2020-10-01T00:00:00Z"),
@@ -65,7 +65,7 @@ db.topics.find({
   }
 }).toArray();
 
-// Tasks assigned in October
+
 db.tasks.find({
   assignedDate: {
     $gte: ISODate("2020-10-01T00:00:00Z"),
